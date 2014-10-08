@@ -7,4 +7,5 @@ This repository contains projects of Bing Maps plug-ins built for a number of we
 为了方便各位论坛开发者或管理员安装使用以上两款必应地图插件，我们特地分别准备了详细的教程供您参考。如在使用过程中您有任何疑惑，敬请在这篇博客的留言板中提问。
 
 Discuz! 教程：[Link]
+
 DedeCMS 教程：[Link]
