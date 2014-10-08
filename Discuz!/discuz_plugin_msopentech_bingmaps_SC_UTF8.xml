@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+Copyright (c) Microsoft Open Technologies (Shanghai) Company Limited.  All rights reserved.
+ 
+The MIT License (MIT)
+ 
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+ 
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+ 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+-->
+
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X3,X3.1,X3.2]]></item>
+	<item id="Time"><![CDATA[2014-09-25 10:10]]></item>
+	<item id="From"><![CDATA[微软开放技术 (http://msopentech.cn)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[必应地图]]></item>
+			<item id="identifier"><![CDATA[msopentech_bingmaps]]></item>
+			<item id="description"><![CDATA[]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[msopentech_bingmaps/]]></item>
+			<item id="copyright"><![CDATA[微软开放技术（上海）有限公司]]></item>
+			<item id="version"><![CDATA[1.0]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[pagehook]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				
+			</item>
+		</item>
+		<item id="version"><![CDATA[X3,X3.1,X3.2]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[Bing Maps Key]]></item>
+				<item id="description"><![CDATA[请从 http://www.microsoft.com/maps/create-a-bing-maps-key.aspx 申请一个 Bing Maps Key]]></item>
+				<item id="variable"><![CDATA[Bingmapskey]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[默认地图城市]]></item>
+				<item id="description"><![CDATA[插入地图的默认城市，中文或英文均可！默认为“北京市”]]></item>
+				<item id="variable"><![CDATA[defaultCity]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[北京市]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[地图宽度]]></item>
+				<item id="description"><![CDATA[拟插入地图的宽度，默认为 400px。最小支持尺寸为 300px，最大支持尺寸为 640px。]]></item>
+				<item id="variable"><![CDATA[mapWidth]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[400]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[地图高度]]></item>
+				<item id="description"><![CDATA[拟插入地图的高度。默认为 300px。最小支持尺寸为 200px，最大支持尺寸为 640px。]]></item>
+				<item id="variable"><![CDATA[mapHeight]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[300]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+                <item id="installfile"><![CDATA[install.php]]></item>
+                <item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+                <item id="upgradefile"><![CDATA[upgrade.php]]></item>
+	</item>
+</root>

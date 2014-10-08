@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+
+<!--
+Copyright (c) Microsoft Open Technologies (Shanghai) Company Limited.  All rights reserved.
+ 
+The MIT License (MIT)
+ 
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+ 
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+ 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+    <head>
+        <meta name="robots" content="noindex, nofollow" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>插入必应地图</title>
+        <style type="text/css">
+            body{padding-left:5px;padding-right:5px; padding-top:5px;font-size:12px;}
+            input{border:1px solid #ABADB3;}
+            button{border:1px solid #888;border-color:#fff #888 #888 #fff;}
+            #myMap{border:1px #999 solid;text-align:center;margin-top:10px}
+        </style>
+        <script type="text/javascript" src="../static/js/jquery-1.2.6.js"></script>
+        <script type="text/javascript" src="http://dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.2&mkt=zh-cn"></script> 
+        <script type="text/javascript" src="../static/js/maps.js"></script>
+        <script type="text/javascript" src="../static/js/formatData.js"></script>
+    </head>
+    <body onload="GetMap('myMap');">
+        
+        <form onsubmit="FindAndAddPin(location.value); return false;">
+            <label>地址： </label><input id="location" name="Location" type="text" /><span class="example"> 例如：北京市海淀区中关村 </span>
+            <input type="submit" id="submitButton" value="定位" />
+            <br />
+        </form>
+        <input type="text" name="bingmapsurl" id="bingmapsurl" style=" display:none"/>
+        
+        <div id="myMap" style="position:relative; "></div>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            document.getElementById("myMap").style.width = imapwidth + "px";
+            document.getElementById("myMap").style.height = imapheight + "px";
+        });
+        </script>
+        
+    </body>
+</html>
