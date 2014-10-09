@@ -11,4 +11,4 @@ This repository contains projects of Bing Maps plug-ins built for these website 
 
 Discuz! 插件安装与配置教程: [http://cn.msopentech.com/?p=873851](http://cn.msopentech.com/?p=873851)
 
-DedeCMS 插件安装与配置教程: [http://cn.msopentech.com/?p=873851](http://cn.msopentech.com/?p=873851)
+DedeCMS 插件安装与配置教程: [http://cn.msopentech.com/?p=873971](http://cn.msopentech.com/?p=873971)
