@@ -9,6 +9,6 @@ This repository contains projects of Bing Maps plug-ins built for these website 
 
 为了方便各位论坛开发者或管理员安装使用以上两款必应地图插件，我们特地分别准备了详细的教程供您参考。如在使用过程中您有任何疑惑，敬请在这篇博客的留言板中提问。
 
-Discuz! 插件安装与配置教程: [http://msopentech.cn](http://msopentech.cn)
+Discuz! 插件安装与配置教程: [http://cn.msopentech.com/?p=873851](http://cn.msopentech.com/?p=873851)
 
-DedeCMS 插件安装与配置教程: [http://msopentech.cn](http://msopentech.cn)
+DedeCMS 插件安装与配置教程: [http://cn.msopentech.com/?p=873851](http://cn.msopentech.com/?p=873851)
