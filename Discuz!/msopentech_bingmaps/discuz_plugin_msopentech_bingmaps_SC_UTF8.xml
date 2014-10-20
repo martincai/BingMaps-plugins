@@ -27,7 +27,7 @@ THE SOFTWARE.
 <root>
 	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
 	<item id="Version"><![CDATA[X3,X3.1,X3.2]]></item>
-	<item id="Time"><![CDATA[2014-09-25 10:10]]></item>
+	<item id="Time"><![CDATA[2014-10-20 11:00]]></item>
 	<item id="From"><![CDATA[微软开放技术 (http://msopentech.cn)]]></item>
 	<item id="Data">
 		<item id="plugin">
@@ -39,7 +39,7 @@ THE SOFTWARE.
 			<item id="datatables"><![CDATA[]]></item>
 			<item id="directory"><![CDATA[msopentech_bingmaps/]]></item>
 			<item id="copyright"><![CDATA[微软开放技术（上海）有限公司]]></item>
-			<item id="version"><![CDATA[1.0]]></item>
+			<item id="version"><![CDATA[1.1]]></item>
 			<item id="__modules">
 				<item id="0">
 					<item id="name"><![CDATA[pagehook]]></item>
