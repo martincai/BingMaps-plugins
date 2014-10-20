@@ -27,7 +27,7 @@ THE SOFTWARE.
 <root>
 	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
 	<item id="Version"><![CDATA[X3,X3.1,X3.2]]></item>
-	<item id="Time"><![CDATA[2014-09-25 10:10]]></item>
+	<item id="Time"><![CDATA[2014-10-20 11:00]]></item>
 	<item id="From"><![CDATA[微软开放技术 (http://msopentech.cn)]]></item>
 	<item id="Data">
 		<item id="plugin">
@@ -39,7 +39,7 @@ THE SOFTWARE.
 			<item id="datatables"><![CDATA[]]></item>
 			<item id="directory"><![CDATA[msopentech_bingmaps/]]></item>
 			<item id="copyright"><![CDATA[微软开放技术（上海）有限公司]]></item>
-			<item id="version"><![CDATA[1.0]]></item>
+			<item id="version"><![CDATA[1.1]]></item>
 			<item id="__modules">
 				<item id="0">
 					<item id="name"><![CDATA[pagehook]]></item>
@@ -69,15 +69,6 @@ THE SOFTWARE.
 				<item id="extra"><![CDATA[]]></item>
 			</item>
 			<item id="1">
-				<item id="displayorder"><![CDATA[1]]></item>
-				<item id="title"><![CDATA[默认地图城市]]></item>
-				<item id="description"><![CDATA[插入地图的默认城市，中文或英文均可！默认为“北京市”]]></item>
-				<item id="variable"><![CDATA[defaultCity]]></item>
-				<item id="type"><![CDATA[text]]></item>
-				<item id="value"><![CDATA[北京市]]></item>
-				<item id="extra"><![CDATA[]]></item>
-			</item>
-			<item id="2">
 				<item id="displayorder"><![CDATA[2]]></item>
 				<item id="title"><![CDATA[地图宽度]]></item>
 				<item id="description"><![CDATA[拟插入地图的宽度，默认为 400px。最小支持尺寸为 300px，最大支持尺寸为 640px。]]></item>
@@ -86,7 +77,7 @@ THE SOFTWARE.
 				<item id="value"><![CDATA[400]]></item>
 				<item id="extra"><![CDATA[]]></item>
 			</item>
-			<item id="3">
+			<item id="2">
 				<item id="displayorder"><![CDATA[3]]></item>
 				<item id="title"><![CDATA[地图高度]]></item>
 				<item id="description"><![CDATA[拟插入地图的高度。默认为 300px。最小支持尺寸为 200px，最大支持尺寸为 640px。]]></item>
