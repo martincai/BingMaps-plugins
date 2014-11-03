@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright (c) Microsoft Open Technologies (Shanghai) Company Limited.  All rights reserved.
  *
  * The MIT License (MIT)
@@ -22,10 +22,12 @@
  * THE SOFTWARE.
  *
  */
- 
-//var defaultcity = parent.document.getElementById("defaultcity").value;
+
 var w = parseInt(parent.document.getElementById("mapwidth").value);
 var h = parseInt(parent.document.getElementById("mapheight").value);
 if(w) var imapwidth = w; else var imapwidth = 400;
 if(h) var imapheight = h; else var imapheight = 300;
 var bmapkey = parent.document.getElementById("bingmapskey").value;
+var zoomlevel = parent.document.getElementById("zoomlevel").value;
+var latitude = parent.document.getElementById("latitude").value;
+var longitude = parent.document.getElementById("longitude").value;

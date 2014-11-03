@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 
 <!--
 Copyright (c) Microsoft Open Technologies (Shanghai) Company Limited.  All rights reserved.
@@ -27,7 +27,7 @@ THE SOFTWARE.
 <html xmlns="http://www.w3.org/1999/xhtml"> 
     <head>
         <meta name="robots" content="noindex, nofollow" />
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>插入必应地图</title>
         <style type="text/css">
             body{padding-left:5px;padding-right:5px; padding-top:5px;font-size:12px;}
@@ -36,9 +36,9 @@ THE SOFTWARE.
             #myMap{border:1px #999 solid;text-align:center;margin-top:10px}
         </style>
         <script type="text/javascript" src="../static/js/jquery-1.2.6.js"></script>
-        <script type="text/javascript" src="http://dev.ditu.live.com/mapcontrol/mapcontrol.ashx?v=6.2&mkt=zh-cn"></script> 
-        <script type="text/javascript" src="../static/js/maps.js"></script>
+        <script type="text/javascript" src="http://dev.ditu.live.com/mapcontrol/mapcontrol.ashx?v=7.0"></script>
         <script type="text/javascript" src="../static/js/formatData.js"></script>
+        <script type="text/javascript" src="../static/js/maps7.0.js"></script>
     </head>
     <body onload="GetMap('myMap');">
         
@@ -52,8 +52,8 @@ THE SOFTWARE.
         <div id="myMap" style="position:relative; "></div>
         <script type="text/javascript">
         $(document).ready(function(){
-            document.getElementById("myMap").style.width = imapwidth + "px";
-            document.getElementById("myMap").style.height = imapheight + "px";
+            $("#myMap").css('width', imapwidth+'px');
+            $("#myMap").css('height', imapheight+'px');
         });
         </script>
         

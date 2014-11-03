@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright (c) Microsoft Open Technologies (Shanghai) Company Limited.  All rights reserved.
  *
  * The MIT License (MIT)
@@ -103,13 +103,16 @@ function bingmapsshowEditorMenu2(tag, params) {
             }
 
             var mapsrc = document.getElementById(ctrlid + '_param_1').contentWindow.document.getElementById("bingmapsurl").value;
-            var vmapsrc;
-            vmapsrc = "http://dev.ditu.live.com/REST/v1/Imagery/Map/Road/" + mapsrc;
-            //console.log(vmapsrc);
-            var strimg1 = '<img src=' + vmapsrc + ' border=0 />';
-
-            if (wysiwyg) {
-                insertText(strimg1, strimg1.length, 0, false, sel);
+            var location = document.getElementById(ctrlid + '_param_1').contentWindow.document.getElementById("location").value;
+            if (location == null || location.length == 0) {
+                alert('请输入地址');
+            }
+            if (mapsrc) {
+                var vmapsrc = "http://dev.ditu.live.com/REST/v1/Imagery/Map/Road/" + mapsrc;console.log(vmapsrc);
+                var strimg1 = '<img src="' + vmapsrc + '" border=0 />';
+                if (wysiwyg) {
+                    insertText(strimg1, strimg1.length, 0, false, sel);
+                }
             }
 
             hideMenu('', 'win');
