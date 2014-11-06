@@ -1,4 +1,5 @@
-﻿/**
+﻿( function() {
+/**
  * Copyright (C) Microsoft Open Technologies (Shanghai) Company Limited
  *
  * GNU General Public License, version 2 (GPL-2.0)
@@ -19,7 +20,6 @@
  * USA
  */
 
-( function() {
   CKEDITOR.plugins.add( 'bingmaps',
   {
     init: function( editor )
