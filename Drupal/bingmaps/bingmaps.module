@@ -1,0 +1,174 @@
+﻿<?php
+/**
+ * Copyright (C) Microsoft Open Technologies (Shanghai) Company Limited
+ *
+ * GNU General Public License, version 2 (GPL-2.0)
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or (at
+ * your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
+ * USA
+ */
+ 
+/*
+ * implement ckeditor_plugin() hook
+ */
+function bingmaps_ckeditor_plugin() {
+    return array(
+        'bingmaps' => array(
+            // Name of the plugin used to write it.
+            'name' => 'bingmaps',
+            // Description of the plugin - it would be displayed in the plugins management section of profile settings.
+            'desc' => t('必应地图'),
+            // The full path to the CKEditor plugins directory, with the trailing slash.
+            'path' => drupal_get_path('module', 'bingmaps') . '/',
+        )
+    );
+}
+
+/*
+ * menu hook
+ */
+function bingmaps_menu() {
+
+    $items['admin/config/bingmaps'] = array(
+        'title' => '',
+        'page callback' => 'bingmaps_config',
+        'access callback' => 'user_access',
+        'access arguments' => array('administer bingmaps'),
+    );
+    
+    $items['getbingmaps'] = array(
+        'page callback' => 'getbingmaps',
+        'access arguments' => array('access bingmaps'),
+        'access callback' => 'user_access',
+        'type' => MENU_CALLBACK,
+    );    
+
+    return $items;
+}
+
+/*
+ * permission hook
+ */
+function bingmaps_permission() {
+    return array(
+        'administer bingmaps' => array(
+            'title' => t('管理必应地图'),
+        ),
+        'access bingmaps' => array(
+            'title' => t('使用必应地图'),
+        ),        
+    );
+}
+
+function bingmaps_config() {
+    return drupal_get_form('bingmaps_settings_form');
+}
+
+/*
+ * form hook
+ */
+function bingmaps_settings_form($form, &$form_state) {
+    $form = array();
+    $zoomValues = array();
+    for ($a = 10; $a <= 18; $a++) {
+        $zoomValues[$a] = $a;
+    }
+    $form['bingmapskey'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Bing Maps Key:'),
+        '#size' => '65',
+        '#description' => t("请从 <a style='text-decoration: underline;' target='_blank' href='http://www.microsoft.com/maps/create-a-bing-maps-key.aspx'>http://www.microsoft.com/maps/create-a-bing-maps-key.aspx</a> 申请一个 Bing Maps Key"),
+        '#required' => TRUE,
+        '#default_value' => variable_get('bingmapskey', ''),
+    );
+    $form['bingmapswidth'] = array(
+        '#type' => 'textfield',
+        '#title' => t('地图宽度：'),
+        '#description' => t('地图宽度，建议400-900'),
+        '#size' => '5',
+        '#required' => TRUE,
+        '#default_value' => variable_get('bingmapswidth', '400'),
+    );
+    $form['bingmapsheight'] = array(
+        '#type' => 'textfield',
+        '#title' => t('地图高度：'),
+        '#description' => t('地图高度，建议300-600'),
+        '#size' => '5',
+        '#required' => TRUE,
+        '#default_value' => variable_get('bingmapsheight', '300'),
+    );
+    $form['defaultcity'] = array(
+        '#type' => 'textfield',
+        '#title' => t('默认城市：'),
+        '#description' => t('默认城市，例如：北京市。'),
+        '#required' => TRUE,
+        '#default_value' => variable_get('defaultcity', '北京市'),
+    );    
+    $form['bingmapszoomlevel'] = array(
+        '#type' => 'select',
+        '#options' => $zoomValues,
+        '#title' => t('放大级别：'),
+        '#description' => t('放大级别，建议17'),
+        '#required' => TRUE,
+        '#default_value' => variable_get('bingmapszoomlevel', '17'),
+    );
+
+    return system_settings_form($form);
+}
+
+/*
+ * theme hook
+ */
+function bingmaps_theme() {
+    return array(
+        'getbingmaps' => array(
+            'variables' => array('bmkey' => NULL, 'bmzoom' => NULL, 'bmwidth' => NULL, 'bmheight' => NULL, 'latitude' => NULL, 'longitude' => NULL),
+            'template' => 'insertmap',
+            'path'     => drupal_get_path('module', 'bingmaps') .'/static/template',
+        ),       
+    );
+}
+
+function getbingmaps() {
+    //get longitude and latitude through ditu REST API by defaultCity
+    $dcUrl = 'http://dev.ditu.live.com/REST/v1/Locations/' . urlencode(variable_get('defaultcity', '')) . '?o=xml&key=' .  variable_get('bingmapskey', '');
+    $dcString = file_get_contents($dcUrl);
+    if (!empty($dcString)) {
+        $dcxml = simplexml_load_string($dcString);
+        $latitude = $dcxml->ResourceSets->ResourceSet->Resources->Location->Point->Latitude;
+        $longitude = $dcxml->ResourceSets->ResourceSet->Resources->Location->Point->Longitude;
+    } else {
+        $latitude = $longitude = '';
+    }
+    
+    print theme('getbingmaps', array(
+        'bmkey' => variable_get('bingmapskey', ''),
+        'bmzoom' => variable_get('bingmapszoomlevel', ''),
+        'bmwidth' => variable_get('bingmapswidth', ''),
+        'bmheight' => variable_get('bingmapsheight', ''),
+        'latitude' => $latitude,
+        'longitude' => $longitude
+                    )
+    );
+}
+
+/*
+ * init hook
+ */
+function bingmaps_init() {
+    drupal_add_js(
+        'jQuery(document).ready(function () { bmwidth="'.variable_get('bingmapswidth', '').'"; bmheight="'.variable_get('bingmapsheight', '').'";});', 'inline'
+    );
+}

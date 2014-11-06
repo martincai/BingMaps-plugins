@@ -1,0 +1,7 @@
+﻿name = "Bing Maps (China)"
+description = "必应地图插件"
+core = "7.x"
+package = "User interface"
+dependencies[] = ckeditor
+configure = admin/config/bingmaps
+version = "7.x-1.0"
